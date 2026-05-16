@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Siga Bem Despachante | Soluções Ágeis e Confiáveis</title>
+    <!-- Bootstrap 5 + Icons + Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        /* Navbar personalizada */
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.7rem;
+            letter-spacing: -0.5px;
+        }
+        .navbar-brand span {
+            color: #e67e22;
+        }
+        .nav-link {
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            color: #e67e22 !important;
+        }
+        .btn-orange {
+            background-color: #e67e22;
+            border-color: #e67e22;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-orange:hover {
+            background-color: #d35400;
+            border-color: #d35400;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(230,126,34,0.3);
+        }
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #0b2b3f 0%, #1a4a6f 100%);
+            color: white;
+            padding: 80px 0;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-weight: 800;
+            font-size: 3rem;
+        }
+        .hero i {
+            color: #ffb347;
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+        }
+        .icon-circle {
+            background-color: #fff3e9;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+        }
+        .icon-circle i {
+            font-size: 32px;
+            color: #e67e22;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #e67e22;
+            border-radius: 4px;
+        }
+        .contact-info {
+            background-color: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .contact-info i {
+            color: #e67e22;
+            width: 32px;
+            font-size: 1.4rem;
+        }
+        footer {
+            background-color: #0a1c2a;
+            color: #ccc;
+            margin-top: 60px;
+            padding: 40px 0 20px;
+            border-radius: 30px 30px 0 0;
+        }
+        .social-icons a {
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: 0.2s;
+            margin: 0 5px;
+        }
+        .social-icons a:hover {
+            background: #e67e22;
+            color: white;
+            transform: translateY(-3px);
+        }
+        .badge-success-custom {
+            background-color: #28a745;
+            color: white;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+        }
+        .info-grid {
+            background: white;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            border: 1px solid #eee;
+        }
+        .img-illus {
+            max-width: 100%;
+            border-radius: 28px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====================== NAVBAR ====================== -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Siga Bem <span>Despachante</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#localizacao">Localização</a></li>
+                </ul>
+                <a href="#contato" class="btn btn-orange ms-lg-3 rounded-pill px-4">Fale Conosco <i class="fas fa-paper-plane ms-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====================== HERO ====================== -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="mb-3"><span class="badge-success-custom"><i class="fas fa-check-circle me-1"></i> Ativa desde 2020</span></div>
+                    <h1 class="mb-3">Despachante em São Miguel do Oeste <i class="fas fa-hand-peace"></i></h1>
+                    <p class="lead mb-4">Agilidade, confiança e transparência para resolver seus processos junto aos órgãos de trânsito e documentações. Sua melhor escolha!</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contato" class="btn btn-light btn-lg rounded-pill px-4 fw-semibold"><i class="fas fa-phone-alt me-2"></i> Consultar agora</a>
+                        <a href="#servicos" class="btn btn-outline-light btn-lg rounded-pill px-4">Nossos serviços <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                    <div class="mt-4 d-flex gap-3 flex-wrap">
+                        <div><i class="fas fa-check-circle"></i> CNPJ Ativo</div>
+                        <div><i class="fas fa-building"></i> Micro Empresa</div>
+                        <div><i class="fas fa-chart-line"></i> Simples Nacional</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://placehold.co/600x400/FFFFFF/1a4a6f?text=Siga+Bem+Despachante&font=montserrat" alt="Imagem ilustrativa despachante" class="img-fluid rounded-4 shadow-lg" style="max-height: 320px; object-fit: cover; width: 100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- ====================== SOBRE + INFORMAÇÕES ====================== -->
+        <section id="sobre" class="my-5 pt-4">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <span class="text-uppercase text-orange fw-semibold" style="color:#e67e22;"><i class="fas fa-flag-checkered me-1"></i> Quem somos</span>
+                    <h2 class="section-title mt-2">Siga Bem Despachante LTDA</h2>
+                    <p class="text-secondary">Fundada em <strong>07 de abril de 2020</strong>, há <strong>6 anos, 1 mês e 9 dias</strong> prestando serviços especializados em documentação veicular, licenciamento, transferências e apoio a empresas. Nossa trajetória é marcada pela ética e compromisso com o cliente.</p>
+                    <div class="info-grid mt-3">
+                        <div class="row row-cols-2 g-3">
+                            <div class="col"><i class="fas fa-building me-2" style="color:#e67e22;"></i> <strong>Razão Social:</strong><br> Siga Bem Despachante LTDA</div>
+                            <div class="col"><i class="fas fa-chart-simple me-2" style="color:#e67e22;"></i> <strong>Porte:</strong> Micro Empresa</div>
+                            <div class="col"><i class="fas fa-briefcase me-2" style="color:#e67e22;"></i> <strong>Natureza:</strong> Sociedade Empresária Limitada</div>
+                            <div class="col"><i class="fas fa-dollar-sign me-2" style="color:#e67e22;"></i> <strong>Capital Social:</strong> R$ 50.000,00</div>
+                            <div class="col"><i class="fas fa-check-circle me-2" style="color:#28a745;"></i> <strong>Situação:</strong> Ativa</div>
+                            <div class="col"><i class="fas fa-file-alt me-2" style="color:#e67e22;"></i> <strong>Simples Nacional:</strong> Optante desde 07/04/2020</div>
+                        </div>
+                        <hr class="my-3">
+                        <div><i class="fas fa-users me-2"></i> <strong>Sócios-Administradores:</strong> Diennifer Cristiane Ninov Golin | Douglas Adinan Weiss</div>
+                        <div class="mt-2"><i class="fas fa-id-card"></i> <strong>CNPJ:</strong> 36.892.249/0001-04</div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <i class="fas fa-quote-left fa-2x" style="color:#e67e22;"></i>
+                            <h4 class="mb-0">Nossa essência</h4>
+                        </div>
+                        <p class="fst-italic">"Atendimento humanizado e soluções rápidas para você seguir bem, sem burocracia."</p>
+                        <div class="mt-4">
+                            <h6><i class="fas fa-clipboard-list me-2"></i> Atividade principal (CNAE):</h6>
+                            <p class="badge bg-light text-dark p-2">82.99-7-99 - Outras atividades de serviços prestados principalmente às empresas não especificadas anteriormente.</p>
+                        </div>
+                        <div class="mt-3">
+                            <i class="fas fa-calendar-alt"></i> <strong>Data de abertura:</strong> 07/04/2020 • <span class="text-success"><i class="fas fa-circle" style="font-size: 10px;"></i> Cadastro ativo</span>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <img src="https://placehold.co/400x150/FFFFFF/eee?text=+Documentação+ágil+e+segura&font=roboto" alt="selo confiança" class="img-fluid rounded-3 mt-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================== SERVIÇOS / ICONES E FRASES ====================== -->
+        <section id="servicos" class="my-5 py-4">
+            <div class="text-center mb-5">
+                <span class="badge bg-warning bg-opacity-10 text-dark px-3 py-2 rounded-pill"><i class="fas fa-cogs me-1"></i> Soluções completas</span>
+                <h2 class="section-title mt-3">O que oferecemos para você</h2>
+                <p class="text-secondary w-75 mx-auto">Serviços de despachante com agilidade e preços competitivos, sempre pensando no seu melhor caminho.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-hover h-100 text-center p-4 bg-white">
+                        <div class="icon-circle"><i class="fas fa-car-side"></i></div>
+                        <h5>Transferência de Veículos</h5>
+                        <p class="text-secondary">Compra e venda com segurança, vistorias e documentos regularizados rapidamente.</p>
+                        <i class="fas fa-arrow-right text-orange"></i>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-hover h-100 text-center p-4 bg-white">
+                        <div class="icon-circle"><i class="fas fa-id-card"></i></div>
+                        <h5>Licenciamento & IPVA</h5>
+                        <p class="text-secondary">Renove seu licenciamento, calcule IPVA e evite multas. Acompanhamento total.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-hover h-100 text-center p-4 bg-white">
+                        <div class="icon-circle"><i class="fas fa-file-signature"></i></div>
+                        <h5>CNH / Carteira Nacional</h5>
+                        <p class="text-secondary">Primeira via, renovação e mudança de categoria com toda assessoria necessária.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-hover h-100 text-center p-4 bg-white">
+                        <div class="icon-circle"><i class="fas fa-building"></i></div>
+                        <h5>Apoio a Empresas</h5>
+                        <p class="text-secondary">Regularização de frotas, emplacamento empresarial e consultoria documental.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="alert alert-light border-start border-4 border-orange shadow-sm" style="border-left-color:#e67e22 !important;">
+                        <i class="fas fa-check-circle text-success me-2"></i> <strong>Mais de 6 anos de confiança</strong> — Centenas de clientes satisfeitos em São Miguel do Oeste e região.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================== CONTATO E LOCALIZAÇÃO ====================== -->
+        <section id="contato" class="my-5 pt-2">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <h3 class="mb-3"><i class="fas fa-address-card me-2"></i>Fale com a Siga Bem</h3>
+                        <p>Estamos prontos para atender você via telefone, e-mail ou WhatsApp. Atendimento rápido e humanizado.</p>
+                        <hr>
+                        <div class="mb-3 d-flex align-items-center"><i class="fas fa-envelope me-3"></i> <strong>E-mail:</strong> <a href="mailto:kacikecontabilidade@gmail.com" class="text-decoration-none ms-2">kacikecontabilidade@gmail.com</a></div>
+                        <div class="mb-3 d-flex align-items-center"><i class="fab fa-whatsapp me-3 text-success"></i> <strong>WhatsApp (1):</strong> <a href="https://wa.me/5549999663361" class="text-decoration-none ms-2">(49) 99966-3361</a></div>
+                        <div class="mb-3 d-flex align-items-center"><i class="fab fa-whatsapp me-3 text-success"></i> <strong>WhatsApp (2):</strong> <a href="https://wa.me/5549999028696" class="text-decoration-none ms-2">(49) 99902-8696</a></div>
+                        <div class="mb-3 d-flex align-items-center"><i class="fas fa-phone-alt me-3"></i> <strong>Telefone:</strong> (49) 99966-3361 / (49) 99902-8696</div>
+                        <div class="mt-4">
+                            <div class="social-icons">
+                                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" id="localizacao">
+                    <div class="contact-info h-100">
+                        <h4><i class="fas fa-map-marker-alt me-2" style="color:#e67e22;"></i> Onde estamos</h4>
+                        <address class="mb-3">
+                            <strong>Logradouro:</strong> Rua La Salle, 1677 - Edifício Mont Blac<br>
+                            <strong>Bairro:</strong> Centro | <strong>CEP:</strong> 89900-000<br>
+                            <strong>São Miguel do Oeste - SC</strong>
+                        </address>
+                        <hr>
+                        <h6><i class="fas fa-paper-plane me-2"></i> Correspondência:</h6>
+                        <p class="small">Siga Bem Despachante LTDA - Rua La Salle 1677, Edif Mont Blac, Centro, São Miguel do Oeste/SC, CEP 89900-000</p>
+                        <div class="mt-3">
+                            <iframe src="https://maps.google.com/maps?q=Rua+La+Salle,+1677,+S%C3%A3o+Miguel+do+Oeste,+SC&output=embed" width="100%" height="220" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="mt-2 text-center"><i class="fas fa-clock"></i> Atendimento: Segunda a Sexta, 8h às 18h | Sábado com agendamento</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================== INFO ADICIONAL: DETALHES SOCIOS E SITUAÇÃO ====================== -->
+        <section class="my-4">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="bg-white rounded-4 p-4 shadow-sm h-100">
+                        <div class="d-flex gap-3 align-items-center mb-2">
+                            <i class="fas fa-user-tie fa-2x" style="color:#e67e22;"></i>
+                            <h5 class="mb-0">Quadro de Sócios e Administradores</h5>
+                        </div>
+                        <ul class="list-unstyled ms-3 mt-3">
+                            <li><i class="fas fa-user-check me-2 text-primary"></i> Diennifer Cristiane Ninov Golin - Sócio-Administrador</li>
+                            <li><i class="fas fa-user-check me-2 text-primary"></i> Douglas Adinan Weiss - Sócio-Administrador</li>
+                        </ul>
+                        <p class="mt-2 text-secondary"><i class="fas fa-gavel me-1"></i> Qualificação do responsável: Sócio-Administrador</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-white rounded-4 p-4 shadow-sm h-100">
+                        <h5><i class="fas fa-chart-pie me-2"></i> Dados Fiscais e Opção pelo Simples</h5>
+                        <p><strong>Opção pelo MEI:</strong> Não   |   <strong>Simples Nacional:</strong> Sim (desde 07/04/2020)<br>
+                        <strong>Capital Social:</strong> R$ 50.000,00<br>
+                        <strong>Data situação cadastral:</strong> 07/04/2020 – Situação: <span class="badge bg-success">ATIVA</span></p>
+                        <div class="progress mt-2" style="height: 6px;"><div class="progress-bar bg-success" style="width:100%"></div></div>
+                        <p class="small mt-2">Empresa regular, sem pendências, pronta para atender você com toda segurança jurídica.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================== FRASE / DEPOIMENTO ====================== -->
+        <div class="row my-5">
+            <div class="col-12 text-center py-4 bg-gradient rounded-4" style="background: linear-gradient(120deg, #fef5e8, #fff7ef);">
+                <i class="fas fa-quote-right fa-3x opacity-25 mb-2"></i>
+                <p class="fs-5 fst-italic fw-medium">"Siga Bem Despachante: onde sua documentação ganha velocidade e você ganha tranquilidade."</p>
+                <span class="fw-semibold"><i class="fas fa-star text-warning"></i> +500 processos realizados com excelência</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================== FOOTER ====================== -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mb-4">
+                    <h4 class="text-white">Siga Bem <span class="text-warning">Despachante</span></h4>
+                    <p class="small">CNPJ: 36.892.249/0001-04 | Matriz desde 2020<br>
+                    Compromisso com soluções documentais e atendimento personalizado. </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white">Contato rápido</h5>
+                    <p><i class="fas fa-phone-alt me-2"></i> (49) 99966-3361<br>
+                    <i class="fab fa-whatsapp me-2"></i> (49) 99902-8696<br>
+                    <i class="fas fa-envelope me-2"></i> kacikecontabilidade@gmail.com</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-white">Endereço</h5>
+                    <p class="small">Rua La Salle, 1677 - Edif Mont Blac, Centro<br>São Miguel do Oeste - SC, 89900-000</p>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center small">© 2026 Siga Bem Despachante LTDA | Todos os direitos reservados | Feito com <i class="fas fa-heart text-danger"></i> em Santa Catarina</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
